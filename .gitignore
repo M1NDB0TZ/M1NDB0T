@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# livekit
+google.json
+.env
+
 # C extensions
 *.so
 
