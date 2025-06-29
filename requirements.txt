@@ -1,3 +1,81 @@
+# MindBot LiveKit Agent Dependencies
+# 
+# This file contains all Python packages required for the MindBot agent.
+# Install with: pip install -r requirements.txt
+
+# =============================================================================
+# CORE LIVEKIT AGENTS FRAMEWORK
+# =============================================================================
+
+# LiveKit Agents with all necessary plugins for voice AI
+# Includes: OpenAI, Cartesia, ElevenLabs, Deepgram, Silero VAD, Turn Detection, MCP support
 livekit-agents[openai, cartesia, elevenlabs, deepgram, silero, turn-detector, mcp]>=1.1.4
-python-dotenv>=1.0
-duckduckgo-search>=8.0
+
+# =============================================================================
+# ENVIRONMENT AND CONFIGURATION
+# =============================================================================
+
+# Environment variable management
+python-dotenv>=1.0.0
+
+# =============================================================================
+# ADDITIONAL UTILITIES
+# =============================================================================
+
+# Web search capabilities (for potential future tools)
+duckduckgo-search>=8.0.0
+
+# HTTP requests for API calls
+requests>=2.31.0
+
+# Data validation and settings management
+pydantic>=2.0.0
+
+# =============================================================================
+# DEVELOPMENT DEPENDENCIES (Optional)
+# =============================================================================
+
+# Uncomment the following lines for development:
+
+# Code formatting and linting
+# black>=23.0.0
+# flake8>=6.0.0
+# mypy>=1.0.0
+
+# Testing framework
+# pytest>=7.0.0
+# pytest-asyncio>=0.21.0
+
+# Development server with hot reload
+# watchdog>=3.0.0
+
+# =============================================================================
+# PRODUCTION DEPENDENCIES (Optional)
+# =============================================================================
+
+# Uncomment for production monitoring and logging:
+
+# Structured logging
+# structlog>=23.0.0
+
+# Metrics and monitoring
+# prometheus-client>=0.16.0
+
+# Health checks and monitoring
+# aiohttp>=3.8.0
+
+# =============================================================================
+# NOTES
+# =============================================================================
+
+# The livekit-agents package with the specified plugins includes:
+# - OpenAI: LLM and TTS support
+# - Cartesia: Alternative TTS provider
+# - ElevenLabs: High-quality TTS
+# - Deepgram: Speech-to-text
+# - Silero: Voice activity detection
+# - Turn-detector: Conversation flow management
+# - MCP: Model Context Protocol support
+#
+# This setup provides a complete voice AI agent framework with multiple
+# provider options for each component (STT, LLM, TTS).
