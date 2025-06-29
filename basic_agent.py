@@ -89,7 +89,7 @@ async def entrypoint(ctx: JobContext):
         stt=deepgram.STT(model="nova-3", language="multi"),
         tts=elevenlabs.TTS(
       voice_id="5I61ElyiGkOaijpW7NOD",
-      model="eleven_flash_v2_5"
+      model="eleven_multilingual_v2"
    ),
         # use LiveKit's turn detection model
         turn_detection=MultilingualModel(),
