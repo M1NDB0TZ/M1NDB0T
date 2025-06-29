@@ -4,6 +4,23 @@
 # Install with: pip install -r requirements.txt
 
 # =============================================================================
+# CORE MACHINE LEARNING DEPENDENCIES
+# =============================================================================
+
+# PyTorch - Required for Silero VAD, Turn Detection, and other ML models
+# CPU-only version for most use cases (smaller install, faster for inference)
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# For GPU support, uncomment the following instead:
+# --extra-index-url https://download.pytorch.org/whl/cu118
+# torch>=2.0.0+cu118
+# torchaudio>=2.0.0+cu118
+
+# Transformers library for ML models (used by turn detection)
+transformers>=4.30.0
+
+# =============================================================================
 # CORE LIVEKIT AGENTS FRAMEWORK
 # =============================================================================
 
@@ -30,6 +47,9 @@ requests>=2.31.0
 
 # Data validation and settings management
 pydantic>=2.0.0
+
+# Numpy for numerical computations (often required by ML libraries)
+numpy>=1.24.0
 
 # =============================================================================
 # DEVELOPMENT DEPENDENCIES (Optional)
@@ -73,9 +93,21 @@ pydantic>=2.0.0
 # - Cartesia: Alternative TTS provider
 # - ElevenLabs: High-quality TTS
 # - Deepgram: Speech-to-text
-# - Silero: Voice activity detection
-# - Turn-detector: Conversation flow management
+# - Silero: Voice activity detection (requires PyTorch)
+# - Turn-detector: Conversation flow management (requires PyTorch + transformers)
 # - MCP: Model Context Protocol support
 #
-# This setup provides a complete voice AI agent framework with multiple
-# provider options for each component (STT, LLM, TTS).
+# PyTorch is required for:
+# - Silero VAD (Voice Activity Detection) models
+# - Turn detection transformer models
+# - Other ML components used in the agents framework
+#
+# We use CPU-only PyTorch by default for:
+# - Smaller installation size
+# - Faster inference for voice processing
+# - Better compatibility across deployment environments
+#
+# For GPU acceleration (if you have CUDA-capable hardware):
+# 1. Uncomment the GPU PyTorch lines above
+# 2. Comment out the CPU-only torch/torchaudio lines
+# 3. Ensure your system has CUDA 11.8 installed
