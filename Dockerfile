@@ -16,10 +16,10 @@ WORKDIR /app
 ARG UID=10001
 RUN adduser \
     --disabled-password \
-    --gecos "" \
-    --home "/home/mindbot" \
-    --shell "/sbin/nologin" \
-    --uid "${UID}" \
+    --gecos "\" \
+    --home "/home/mindbot\" \
+    --shell "/sbin/nologin\" \
+    --uid "${UID}\" \
     mindbot
 
 # Install system dependencies required for building Python packages
